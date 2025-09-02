@@ -99,13 +99,13 @@ int ICM42670::begin() {
   inv_imu_int1_pin_config_t int1_pin_config;
 
   if (i2c != NULL) {
-    i2c->begin();
-    i2c->setClock(clk_freq);
+    // i2c->begin();
+    // i2c->setClock(clk_freq);
     icm_serif.serif_type = UI_I2C;
     icm_serif.read_reg  = i2c_read;
     icm_serif.write_reg = i2c_write;
   } else {
-    spi->begin();
+    // spi->begin();
     pinMode(spi_cs,OUTPUT);
     digitalWrite(spi_cs,HIGH);
     icm_serif.serif_type = UI_SPI4;
